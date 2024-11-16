@@ -21,3 +21,30 @@ tasks = [
 "Spend a few minutes doodling or colouring",
 “Listen to an audiobook”
 ] 
+
+# Function to display a random task 
+def display_task(): 
+task = random.choice(tasks) 
+task_label.config(text=task)
+
+# Create the main window
+window = tk.Tk()
+window.title("Random Task Generator")
+window.geometry("400x200")
+window.config(bg="white")
+
+# Label to display the task
+task_label = tk.Label(window, text="", wraplength=380, font=("Helvetica", 12), bg="white", fg="black")
+task_label.pack(pady=20)
+
+
+
+# Button to display the task
+task_button = tk.Button(window, text="Show Task", command=display_task, font=("Helvetica", 12), bg="purple", fg="white")
+task_button.pack(pady=10)
+
+# Display a task when the app starts
+display_task()
+
+# Run the application
+window.mainloop()
